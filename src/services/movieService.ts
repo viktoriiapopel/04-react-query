@@ -55,4 +55,5 @@ export async function fetchMovies(query: string, page: number = 1): Promise<TMDB
   }
 }
 
-console.log("TMDB Token:", TMDB_BEARER_TOKEN);
+
+console.log("TOKEN in build:", TMDB_BEARER_TOKEN?.slice(0, 10));
