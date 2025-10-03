@@ -36,11 +36,11 @@ signal?: AbortSignal;
 }
 
 
-export async function fetchMovies(query: string): Promise<TMDBSearchResponse<Movie>> {
+export async function fetchMovies(query: string, page: number = 1): Promise<TMDBSearchResponse<Movie>> {
   try {
    const response = await axiosInstance.get<TMDBSearchResponse<Movie>>(
   "/search/movie",
-  { params: { query } }
+  { params: { query,page } }
 );
 
     return response.data;
